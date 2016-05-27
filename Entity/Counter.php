@@ -124,5 +124,23 @@ class Counter
     {
         return $this->correctionCount;
     }
+
+    /**
+     * Adds click
+     *
+     * @param int $clicks
+     *
+     * @return Counter
+     */
+    public function addClicks($clicks)
+    {
+        $newRealCount = $this->realCount + $clicks;
+
+        $this->setRealCount($newRealCount);
+
+        $this->count = $this->realCount + $this->correctionCount;
+
+        return $this;
+    }
 }
 
