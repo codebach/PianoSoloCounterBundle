@@ -26,22 +26,21 @@ class Counter
      *
      * @ORM\Column(name="count", type="integer")
      */
-    private $count;
+    private $count = 0;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="realCount", type="integer")
      */
-    private $realCount;
+    private $realCount = 0;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="correctionCount", type="integer")
      */
-    private $correctionCount;
-
+    private $correctionCount = 0;
 
     /**
      * Get id
