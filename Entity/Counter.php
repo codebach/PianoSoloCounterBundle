@@ -127,13 +127,13 @@ class Counter
     /**
      * Adds click
      *
-     * @param int $clicks
+     * @param int $click
      *
      * @return Counter
      */
-    public function addClicks($clicks)
+    public function addClick($click = 1)
     {
-        $newRealCount = $this->realCount + $clicks;
+        $newRealCount = $this->realCount + $click;
 
         $this->setRealCount($newRealCount);
 
