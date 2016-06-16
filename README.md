@@ -8,7 +8,7 @@ relation automatically. Then you can easily add clicks to the counter.
 1-) Tell composer to download by running the command:
 
 ```bash
-composer require pianosolo/weather-bundle
+composer require pianosolo/counter-bundle
 ```
  
 2-) Add the bundle to AppKernel
@@ -21,7 +21,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new PianoSolo\WeatherBundle\PianoSoloWeatherBundle(),
+        new PianoSolo\WeatherBundle\PianoSoloCounterBundle(),
     );
 }
 ```
@@ -45,8 +45,9 @@ class MyEntity
 }
 
 ```
+2-) EventListener will create a new `Counter` for your entity while persisting your entity.
 
-2-) Call Counter and add clicks.
+3-) Call Counter and add clicks.
 
 ```php
 <?php
@@ -62,7 +63,7 @@ class DefaultController extends Controller
         //...
         
         $myEntity = $myEntityRepository->findOneBy(array('id' => $id));
-        $counter = $myEntity->getCounter()->addClick(5); // Default value of parameter is 1
+        $myEntity->getCounter()->addClick(5); // Default value of parameter is 1
         
         $entityManager->persist($myEntity);
         $entityManager->flush();
