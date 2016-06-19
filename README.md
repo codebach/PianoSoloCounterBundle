@@ -21,7 +21,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new PianoSolo\WeatherBundle\PianoSoloCounterBundle(),
+        new PianoSolo\CounterBundle\PianoSoloCounterBundle(),
     );
 }
 ```
