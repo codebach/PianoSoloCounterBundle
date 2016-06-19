@@ -46,6 +46,11 @@ class MyEntity
 
 ```
 2-) EventListener will create a new `Counter` for your entity while persisting your entity.
+```php
+    $myEntity = new MyEntity();
+    $entityManager->persist($myEntity);
+    $entityManager->flush();
+```
 
 3-) Call Counter and add clicks.
 
@@ -70,6 +75,15 @@ class DefaultController extends Controller
     }
 }
 
+```
+
+4-) Get Count
+```php
+    $count = $myEntity->getCounter->getCount();
+```
+
+```twig
+    {{ myEntity.counter.count }}
 ```
 
 
