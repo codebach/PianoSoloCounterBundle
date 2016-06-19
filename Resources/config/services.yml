@@ -1,1 +1,5 @@
 services:
+    pianosolo_counter.listener.counter_creator:
+        class: PianoSolo\CounterBundle\EventListener\CounterCreator
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
