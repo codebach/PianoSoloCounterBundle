@@ -79,7 +79,7 @@ class DefaultController extends Controller
 
 4-) Get Count
 ```php
-    $count = $myEntity->getCounter->getCount();
+    $count = $myEntity->getCounter()->getCount();
 ```
 
 ```twig
