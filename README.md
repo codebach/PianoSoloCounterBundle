@@ -90,4 +90,23 @@ class DefaultController extends Controller
     {{ myEntity.counter.count }}
 ```
 
+### Adding Fake Count
+
+You can add fake counts to your entities and keep the real counts. Whenever you want you can delete this fake counts.
+
+```php
+    // Example initial count values of entity
+    $count = $myEntity->getCounter()->getCount(); // return 10
+    $realCount = $myEntity->getCounter()->getRealCount(); // return 10
+
+    // Adding fake count
+    $myEntity->getCounter()->setCorrectionCount(100);
+    $entityManager->persist($myEntity);
+    $entityManager->flush();
+
+    // Keeping real count
+    $count = $myEntity->getCounter()->getCount(); // return 110
+    $realCount = $myEntity->getCounter()->getRealCount(); // return 10
+```
+
 
