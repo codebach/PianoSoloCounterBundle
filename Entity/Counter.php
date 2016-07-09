@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="PianoSolo\CounterBundle\Entity\CounterRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Counter
 {
@@ -137,9 +138,18 @@ class Counter
 
         $this->setRealCount($newRealCount);
 
-        $this->count = $this->realCount + $this->correctionCount;
+        $this->calculate();
 
         return $this;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function calculate()
+    {
+        $this->count = $this->realCount + $this->correctionCount;
     }
 }
 
