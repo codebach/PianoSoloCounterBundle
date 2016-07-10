@@ -107,6 +107,11 @@ You can add fake counts to your entities and keep the real counts. Whenever you 
     // Keeping real count
     $count = $myEntity->getCounter()->getCount(); // return 110
     $realCount = $myEntity->getCounter()->getRealCount(); // return 10
+
+    // Delete fake count
+    $myEntity->getCounter()->setCorrectionCount(0):
+    $entityManager->persist($myEntity);
+    $entityManager->flush();
 ```
 
 
