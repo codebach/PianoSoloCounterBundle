@@ -1,7 +1,7 @@
 ## PianoSolo Counter Bundle
 
-Symfony bundle helps to easily add a counter to entities. Using `CounterTrait` in entities will create a Counter
-relation automatically. Then you can easily add clicks to the counter.
+Symfony bundle helps to easily add a counter to entities. Using `CounterTrait` in entities will create a Counter entity
+relation automatically. Then you can easily add clicks to the counter. You can also add fake counts to your entites by keeping the real count.
 
 [![Latest Stable Version](https://poser.pugx.org/pianosolo/counter-bundle/v/stable)](https://packagist.org/packages/pianosolo/counter-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/pianosolo/counter-bundle/v/unstable)](https://packagist.org/packages/pianosolo/counter-bundle)
